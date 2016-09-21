@@ -18,6 +18,6 @@ from django.contrib import admin
 from events.views import index
 
 urlpatterns = [
-    # url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='home'),
 ]
