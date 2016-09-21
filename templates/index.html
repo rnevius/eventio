@@ -7,48 +7,21 @@
     <h1>Eventio</h1>
     <h2>Events List</h2>
 
-    <div class="event">
-        <h3><a href="#">Event Name</a></h3>
-        <p>
-            Some event description. This can be long, or this can be short.
-        </p>
-        <dl>
-            <dt>When:</dt>
-            <dd>July 14, 2017 at 8:30 PM</dd>
-            <dt>Where: </dt>
-            <dd>Buffalo Billiards, Austin, TX</dd>
-            <dt>Price:</dt>
-            <dd>$15.00</dd>
-        </dl>
-    </div>
-
-    <div class="event">
-        <h3><a href="#">Event Name</a></h3>
-        <p>
-            Some event description. This can be long, or this can be short.
-        </p>
-        <dl>
-            <dt>When:</dt>
-            <dd>July 14, 2017 at 8:30 PM</dd>
-            <dt>Where: </dt>
-            <dd>Buffalo Billiards, Austin, TX</dd>
-            <dt>Price:</dt>
-            <dd>$15.00</dd>
-        </dl>
-    </div>
-
-    <div class="event">
-        <h3><a href="#">Event Name</a></h3>
-        <p>
-            Some event description. This can be long, or this can be short.
-        </p>
-        <dl>
-            <dt>When:</dt>
-            <dd>July 14, 2017 at 8:30 PM</dd>
-            <dt>Where: </dt>
-            <dd>Buffalo Billiards, Austin, TX</dd>
-            <dt>Price:</dt>
-            <dd>$15.00</dd>
-        </dl>
-    </div>
+    {% for event in events %}
+        <div class="event">
+            <h3><a href="#">{{ event.name }}</a></h3>
+            <p>Capacity: {{ event.capacity }}</p>
+            <p>
+                {{ event.description }}
+            </p>
+            <dl>
+                <dt>When:</dt>
+                <dd>{{ event.start_time }}</dd>
+                <dt>Where: </dt>
+                <dd>{{ event.location }}</dd>
+                <dt>Price:</dt>
+                <dd>${{ event.price }}</dd>
+            </dl>
+        </div>
+    {% endfor %}
 </body>
