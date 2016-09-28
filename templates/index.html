@@ -10,7 +10,12 @@
     {% for event in events %}
         <div class="event">
             <h3><a href="#">{{ event.name }}</a></h3>
-            <p>Capacity: {{ event.capacity }}</p>
+            <p>
+                {# Ask what should happen if no capacity #}
+                {% if event.capacity %}
+                    Capacity: {{ event.capacity }}
+                {% endif %}
+            </p>
             <p>
                 {{ event.description }}
             </p>
@@ -20,7 +25,13 @@
                 <dt>Where: </dt>
                 <dd>{{ event.location }}</dd>
                 <dt>Price:</dt>
-                <dd>${{ event.price }}</dd>
+                <dd>
+                    {% if event.price %}
+                        ${{ event.price }}
+                    {% else %}
+                        FREE
+                    {% endif %}
+                </dd>
             </dl>
         </div>
     {% endfor %}
