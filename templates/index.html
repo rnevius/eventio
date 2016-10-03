@@ -1,38 +1,17 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <title>Eventio</title>
-</head>
-<body>
-    <h1>Eventio</h1>
+{% extends '_partials/base.html' %}{% load staticfiles %}
+
+{% block content %}
+
     <h2>Events List</h2>
 
     {% for event in events %}
         <div class="event">
-            <h3><a href="#">{{ event.name }}</a></h3>
+            <h3><a href="{% url 'event' pk=event.pk %}">{{ event.name }}</a></h3>
+            <p><em>{{ event.start_time }}</em></p>
             <p>
-                {# Ask what should happen if no capacity #}
-                {% if event.capacity %}
-                    Capacity: {{ event.capacity }}
-                {% endif %}
+                {{ event.description|truncatewords:15 }}
             </p>
-            <p>
-                {{ event.description }}
-            </p>
-            <dl>
-                <dt>When:</dt>
-                <dd>{{ event.start_time }}</dd>
-                <dt>Where: </dt>
-                <dd>{{ event.location }}</dd>
-                <dt>Price:</dt>
-                <dd>
-                    {% if event.price %}
-                        ${{ event.price }}
-                    {% else %}
-                        FREE
-                    {% endif %}
-                </dd>
-            </dl>
         </div>
     {% endfor %}
-</body>
+
+{% endblock content %}

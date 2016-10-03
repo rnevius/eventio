@@ -1,0 +1,31 @@
+{% extends '_partials/base.html' %}{% load staticfiles %}
+
+{% block content %}
+
+    <h1>{{ event.name }}</h1>
+    <p>
+        {% if event.capacity %}
+            Capacity: {{ event.capacity }}
+        {% endif %}
+    </p>
+    <p>
+        {{ event.description }}
+    </p>
+    <dl>
+        <dt>When:</dt>
+        <dd>{{ event.start_time|date }} at {{ event.start_time|time }}</dd>
+        <dt>Where: </dt>
+        <dd>{{ event.location }}</dd>
+        <dt>Price:</dt>
+        <dd>
+            {% if event.price %}
+                ${{ event.price }}
+            {% else %}
+                FREE
+            {% endif %}
+        </dd>
+    </dl>
+
+    <a href="" class="button">Register&rarr;</a>
+
+{% endblock content %}
