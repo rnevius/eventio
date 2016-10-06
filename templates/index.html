@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+<!DOCTYPE html>{% load staticfiles %}
 <head>
     <meta charset="utf-8">
     <title>Eventio</title>
+
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
 </head>
 <body>
+  <div class="container">
     <h1>Eventio</h1>
     <h2>Events List</h2>
 
@@ -35,4 +38,5 @@
             </dl>
         </div>
     {% endfor %}
+  </div>
 </body>
