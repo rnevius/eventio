@@ -7,6 +7,33 @@ body {
     padding: 0;
 }
 
+
+/* Buttons */
+button {
+    background-color: #2ecc71;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 0.55em 1.5em;
+    text-decoration: none;
+}
+button:hover {
+    background-color: #27ae60;
+}
+
+
+/* Forms */
+label {
+  display: block;
+}
+input,
+textarea {
+   font-family: inherit;
+   font-size: inherit;
+}
+
+
 /* Grid */
 .container {
     box-sizing: border-box;
@@ -16,6 +43,36 @@ body {
     position: relative;
     width: 100%;
 }
+
+// .column {
+//     box-sizing: border-box;
+//     float: left;
+//     margin-left: 4%;
+//     width: 100%;
+// }
+
+// .column:first-child {
+//     margin-left: 0;
+// }
+
+// .one-half.column {
+//     width: 48%;
+// }
+
+// .one-third.column {
+//     width: 30.6666666667%;
+// }
+// .two-thirds.column {
+//     width: 65.3333333333%;
+// }
+
+// .one-fourth.column {
+//     width: 22%;
+// }
+// .three-fourths.column {
+//     width: 74%;
+// }
+
 
 /* Navigation */
 nav {
