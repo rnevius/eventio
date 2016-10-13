@@ -1,4 +1,4 @@
-{% extends '_partials/base.html' %}{% load staticfiles %}
+{% extends '_partials/base.html' %}
 
 {% block content %}
 
@@ -7,7 +7,7 @@
     {% for event in events %}
         <div class="event">
             <h3><a href="{% url 'event' pk=event.pk %}">{{ event.name }}</a></h3>
-            <p><em>{{ event.start_time }}</em></p>
+            <p><em>{{ event.start_time }} at {{ event.location }}</em></p>
             <p>
                 {{ event.description|truncatewords:15 }}
             </p>
