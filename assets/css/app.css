@@ -4,7 +4,34 @@ body {
     font-size: 18px;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding: 0 0 60px;
+}
+
+
+/* Buttons */
+button {
+    background-color: #2ecc71;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    padding: 0.4em 1.2em;
+    text-decoration: none;
+}
+button:hover {
+    background-color: #27ae60;
+}
+
+
+/* Forms */
+label {
+    display: block;
+}
+input,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
 }
 
 
@@ -13,6 +40,7 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 680px;
+    overflow: hidden;
     padding: 0 20px;
     position: relative;
     width: 100%;
@@ -29,6 +57,19 @@ nav .title {
     font-size: 2em;
     font-weight: bold;
     text-decoration: none;
+}
+.menu {
+    float: right;
+}
+.menu a {
+    color: white;
+    display: inline-block;
+    font-size: 0.9em;
+    padding: 1em 0.8em;
+    text-decoration: none;
+}
+.menu a:hover {
+    background-color: #2980b9;
 }
 
 
