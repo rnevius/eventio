@@ -3,6 +3,9 @@
 {% block content %}
 
     <h1>{{ event.name }}</h1>
+    {% if event.owner == user %}
+        <a href="{% url 'event_edit' event.pk %}">Edit Event</a>
+    {% endif %}
     <p>
         {% if event.capacity %}
             Capacity: {{ event.capacity }}
@@ -25,5 +28,7 @@
             {% endif %}
         </dd>
     </dl>
+
+    <a class="button" href="{% url 'event_register' event.pk %}">Register</a>
 
 {% endblock content %}
