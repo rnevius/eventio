@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import AddEventForm
 from .models import Event
@@ -16,6 +16,9 @@ def event_detail(request, pk):
 def event_add(request):
     if request.method == 'POST':
         form = AddEventForm(request.POST)
+        if form.is_valid():
+            event = form.save()
+            return redirect('event', pk=event.pk)
     else:
         form = AddEventForm()
     return render(request, 'event_add.html', {'form': form})
