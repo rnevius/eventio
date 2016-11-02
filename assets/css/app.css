@@ -37,8 +37,9 @@ textarea {
    font-size: inherit;
 }
 .helptext {
+    color: #e74c3c;
     display: block;
-    font-size: 0.8em; 
+    font-size: 0.8em;
     font-style: italic;
 }
 
@@ -84,6 +85,16 @@ textarea {
 // }
 
 
+/* Messages */
+#messages .success {
+    background-color: #2ecc71;
+    border-radius: 4px;
+    color: white;
+    margin: 0 0 3em;
+    padding: 0.5em 1em;
+    text-align: center;
+}
+
 /* Navigation */
 nav {
     background-color: #3498db;
@@ -115,6 +126,11 @@ h1,
 h2,
 h3 {
     line-height: 1.2;
+}
+
+a.delete {
+    color: #e74c3c;
+    font-style: italic;
 }
 
 dd {
