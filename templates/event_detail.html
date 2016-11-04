@@ -26,4 +26,10 @@
         </dd>
     </dl>
 
+    {% if event.owner == user %}
+        <p>
+            <a href="{% url 'event_edit' event.pk %}">Edit Event</a>
+            // <a href="{% url 'event_delete' event.pk %}">Delete Event</a>
+        </p>
+    {% endif %}
 {% endblock content %}
