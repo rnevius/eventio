@@ -11,7 +11,11 @@ class Event(models.Model):
     price = models.DecimalField(
         blank=True, null=True, decimal_places=2, max_digits=6)
     capacity = models.PositiveSmallIntegerField(blank=True, null=True)
-    students = models.ManyToManyField(User, related_name='attending_events')
+    students = models.ManyToManyField(
+        User,
+        related_name='attending_events',
+        blank=True
+    )
 
     def __str__(self):
         return self.name

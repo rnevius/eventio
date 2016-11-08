@@ -2,13 +2,14 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils import timezone
 
 from .forms import AddEventForm
 from .models import Event
 
 
 def index(request):
-    events = Event.objects.all()
+    events = Event.objects.filter(start_time__gte=timezone.now())
     return render(request, 'index.html', {'events': events})
 
 
